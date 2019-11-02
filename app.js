@@ -51,6 +51,14 @@ const UserModel = Mongoose.model("user", {
 });
 
 
+
+app.get("/info", async (request, response) => {
+    
+    response.status(200).send("ToDoListWebservice by Giovanne Dias");
+    
+});
+
+
 app.get("/users", async (request, response) => {
     try {
         var result = await UserModel.find().exec();

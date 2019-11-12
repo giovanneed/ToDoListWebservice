@@ -19,7 +19,7 @@ app.use(BodyParser.urlencoded({ extended: true }));
 //app.put("/person/:id", async (request, response) => {});
 //app.delete("/person/:id", async (request, response) => {});
 
-app.listen(3000, () => {
+app.listen(3005, () => {
     console.log("Listening at :3000...");
 });
 
@@ -143,8 +143,6 @@ app.post("/user/:id/list/", async (request, response) => {
 });
 
 app.get("/user/:id/lists/", async (request, response) => {
-
-
 
      try {
         var user = await UserModel.findById(request.params.id).populate('lists', 'title latitude longitude',ListModel).exec();
